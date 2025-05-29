@@ -6,11 +6,11 @@
 }
 
 body {
-  background-color: whitesmoke; /* Remplacez par l’image de fond réelle */
+  background-color: #400101; /* Remplacez par l’image de fond réelle */
   background-size: cover;
   background-position: center;
   height: 100vh;
-  color: rgb(0, 0, 0);
+  color: rgb(244, 238, 238);
 }
 
 nav {
