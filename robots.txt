@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap:https://amadou-salifou.github.io/Mines-et-P-trole-UAM/
