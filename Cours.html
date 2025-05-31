@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cours</title>
     <link rel="stylesheet" href="style1.css">
-    <meta name="description" content="Ressources pédagogiques">
-    <meta name="robots" content="index, follow">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="firebase-config.js"></script>
     <style>
     .horizontal {
         display:block;
@@ -15,14 +16,14 @@
     .horizontal p {
         margin: 10px;
         padding: 10px;
-        background-color: #000000;
-        border: 1px solid #000000;
+        background-color: #440808;
+        border: 1px solid #440808;
     }
     .vertical p {
         margin: 10px;
         padding: 10px;
-        background-color: #000000;
-        border: 1px solid #000000;
+        background-color: #440808;
+        border: 1px solid #440808;
     }
    
    
@@ -34,20 +35,21 @@
         <nav>
             <ul>
                 <li>
-                    <a href="index.html">Accueil</a>
+                    <a href="index.html" class="btn">Accueil</a>
                 </li>
                 <li>
-                    <a href="admission.html">Admission</a>
+                    <a href="admission.html" class="btn">Admission</a>
                 </li>
                 <li>
-                    <a href="apropos.html">A propos</a>
+                    <a href="apropos.html" class="btn">A propos</a>
                 </li>
                 <li>
-                    <a href="discipline.html">Disciplines</a>
+                    <a href="discipline.html" class="btn">Disciplines</a>
                 </li>
-                <li><a href="Cours.html">Cours</a></li>
+                <li><a href="Cours.html" class="btn">Cours</a></li>
             </ul>
         </nav>
+         <button onclick="logout()">Se déconnecter</button>
     </header>
     <main>
         <h1>
@@ -236,5 +238,21 @@
         </div>
         
     </main>
+    <script>
+        firebase.auth().onAuthStateChanged(function(user){
+            if(user) {
+                window.location.href = "login.html";
+            }
+        }
+    );
+    </script>
+     <script>
+    function logout() {
+        firebase.auth().sigOut().then(()=>{
+        window.location.href = "login.html";
+       }
+    );
+    }
+  </script>
 </body>
 </html>
