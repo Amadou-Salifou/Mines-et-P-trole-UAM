@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Accès aux Cours</title>
+  <link rel="stylesheet" href="Style5.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Entrer le code d’accès</h2>
+    <input type="password" id="codeInput" placeholder="Code d’accès" />
+    <button onclick="verifierCode()">Valider</button>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    function verifierCode() {
+      const codeSecret = "UAM2025"; // 🔐 Ton code secret à partager uniquement avec ta section
+      const entree = document.getElementById("codeInput").value;
+      const message = document.getElementById("message");
+
+      if (entree === codeSecret) {
+        window.location.href = "cours.html"; // Redirection si code correct
+      } else {
+        message.textContent = "❌ Code incorrect. Réessaye.";
+        message.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
