@@ -239,20 +239,14 @@
         
     </main>
     <script>
-        firebase.auth().onAuthStateChanged(function(user){
+        firebase.auth().onAuthStateChanged((user) =>{
             if(user) {
                 window.location.href = "login.html";
+            } else{
+                console.log("Utilisateur connecté :", user.email);
             }
         }
     );
     </script>
-     <script>
-    function logout() {
-        firebase.auth().sigOut().then(()=>{
-        window.location.href = "login.html";
-       }
-    );
-    }
-  </script>
 </body>
 </html>
